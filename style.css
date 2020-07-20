@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.toggle {
+    cursor: pointer;
+}
+
+body {
+    transition-property: all;
+    transition: transform 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    width: 250px;
+    position: fixed;
+    transform: translateX(-250px);
+    z-index: 222;
+    top: 0;
+    overflow: scroll;
+    align-items: right;
+    height: 100vh;
+}
+
+.toggle-between {
+    transform: translateX(250px);
+}
+
+.navbar ul {
+    list-style-type: none;
+}
+
+.navbar ul li {
+    margin-top: 30px;
+    border-bottom: 0.5px solid black;
+    width: 250px;
+    height: 40px;
+}
+
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+    font-size: 15px;
+    width: 250px;
+    text-align: center;
+    line-height: auto;
+    height: 30px;
+    transition-property: all;
+    transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    opacity: 1;
+    font-weight: bold;
+    transform: translateX( -25px);
+}
+
+button,
+input[type='submit'] {
+    background-color: green;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modal-container.show {
+    display: block;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    width: 400px;
+    animation-name: modalopen;
+    animation-duration: 2s;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px;
+}
+
+.modal-header h3 {
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+.modal-content {
+    padding: 20px;
+}
+
+.modal-form div {
+    margin: 15px 0;
+}
+
+.modal-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-form .form-input {
+    padding: 8px;
+    width: 100%;
+}
+
+.close-btn {
+    background: transparent;
+    font-size: 25px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: green;
+}
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
